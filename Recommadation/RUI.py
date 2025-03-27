@@ -13,7 +13,8 @@ import scipy.sparse
 # Load MovieLens dataset (Ensure this dataset has an 'image_url' column)
 @st.cache_data
 def load_data():
-    items= pd.read_csv("cellphones_dataurl1.csv")
+    items=pd.read_csv("Recommadation/cellphones_dataurl1.csv")
+    #items= pd.read_csv("cellphones_dataurl1.csv")
     interactions= pd.read_csv("cellphones ratings.csv")
     users= pd.read_csv("cellphones users.csv")
     return items, interactions,users
