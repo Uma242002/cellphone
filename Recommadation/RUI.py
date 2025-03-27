@@ -107,9 +107,9 @@ if "selected_section" in st.session_state:
 
     st.write(":green[Model:]", model[indx])
     st.write(":green[Price: $ ]", prices[indx])
-    st.write(":green[RAM:]", RAM[indx])
-    st.write(":green[Main camera: ]",main_camera[indx])
-    st.write(":green[Internal memory: ]",Internal_memory[indx])
+    st.write(":green[RAM: GB]", RAM[indx])
+    st.write(":green[Main camera: MP ]",main_camera[indx])
+    st.write(":green[Internal memory: GB ]",Internal_memory[indx])
 
 
     if st.button("Recommend Similar Items:"):
@@ -125,7 +125,7 @@ if "selected_section" in st.session_state:
         Internal_memory = [items['internal memory'].iloc[i] for i in indxs]
         RAM = [items['RAM'].iloc[i] for i in indxs]
         main_camera = [items['main camera'].iloc[i] for i in indxs]
-        names = [f"{b} {m}" for b, m in zip(brand, model)]
+        names = [f" Brand={b},Model={m},Prices={c} $ ,Internal Memory={d} GB,RAM={k} GB,Main camera={h} MP" for b, m ,c,d,k,h in zip(brand, model,prices,Internal_memory,RAM,main_camera)]
 
 
         selected_index2 = clickable_images(image_paths,titles=names,
