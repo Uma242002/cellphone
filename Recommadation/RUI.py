@@ -15,8 +15,8 @@ import scipy.sparse
 def load_data():
     items=pd.read_csv("Recommadation/cellphones_dataurl1.csv")
     #items= pd.read_csv("cellphones_dataurl1.csv")
-    interactions= pd.read_csv("cellphones ratings.csv")
-    users= pd.read_csv("cellphones users.csv")
+    interactions= pd.read_csv("Recommadation/cellphones ratings.csv")
+    users= pd.read_csv("Recommadation/cellphones users.csv")
     return items, interactions,users
 
 items, interactions,users = load_data()
